@@ -2,7 +2,7 @@
 
 This is a simple FastAPI project created as a learning and portfolio application. The main goal of this project was to understand how backend applications work in practice: authentication, working with database, routing, and basic frontend integration.
 
-Implemented features:
+## Implemented features: 
 - User registration and login
 - Authentication using JWT stored in cookies
 - Role-based access (admin and user)
@@ -12,29 +12,35 @@ Implemented features:
 - SQLAlchemy ORM
 - Alembic migrations
 
-Technologies used:
-Python
-FastAPI
-SQLAlchemy
-Alembic
-Jinja2
-SQLite
+## Technologies used:
+- Python
+- FastAPI
+- SQLAlchemy
+- Alembic
+- Jinja2
+- PostgreSQL (via SQLAlchemy)
 
-Project structure:
+## Project structure: 
 The main application code is located inside the TodoApp derictory. It contains routers, templates, static files, database configuration, and models. Alembic is used for Database migrations.
 
-How to run locally:
-Clone the repository and go to the project directory:
+## How to run locally:
+
+1) Clone the repository and go to the project directory
+
 git clone
+
 https://github.com/Maxle127/FastAPI.git
+
 cd FastAPI
-Install dependencies: pip install -r requirements.txt
-Run the application: uvicorn TodoApp.main:app --reload
+
+2) Install dependencies: pip install -r requirements.txt
+3) Set up the database connection Update the DATABASE_URL in the project (or via environment variables) with your PostgreSQL credentials.
+4) Run the application: uvicorn TodoApp.main:app --reload
 After that, open the browser and go to: https://127.0.0.1:8000
 
-Notes:
+## Notes: 
 SQLite is used for simplicity during development. The project can be extended and migrated to PostgreSQL in the future. This application is still evoling as i continue learning backend development.
 
-Author
+## Author
 Maksym Leiza
 Junior Python Backend Developer
