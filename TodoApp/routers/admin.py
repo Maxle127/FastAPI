@@ -6,7 +6,7 @@ from starlette import status
 from fastapi import APIRouter, Depends, HTTPException, Path
 from .auth import get_current_user
 
-from ..models import Todos
+from ..models import Todos, Users
 from ..database import SessionLocal
 
 router = APIRouter(
@@ -42,4 +42,8 @@ async def delete_todo(user:user_dependency, db: db_dependency, todo_id: int=Path
     db.query(Todos).filter(Todos.id == todo_id).delete()
     db.commit()
     
-    
+@router.get("/users")
+def get_all_users(db: db_dependency, user: user_dependency):
+    if user["user_role"] != "admin":
+        return {"detail": "Not authorized"}
+    return db.query(Users).all()
